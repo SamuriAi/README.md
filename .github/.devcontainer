@@ -1,0 +1,23 @@
+{
+    "name": "My Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "workspaceFolder": "/workspace",
+    "extensions": [
+        "ms-python.python",
+        "dbaeumer.vscode-eslint"
+    ],
+    "forwardPorts": [3000, 8080],
+    "environmentVariables": {
+        "NODE_ENV": "development"
+    },
+    "mounts": [
+        "source": "${workspaceFolder}",
+        "target": "/workspace",
+        "type": "bind"
+    ],
+    "dockerComposeFile": "docker-compose.yml",
+    "dockerComposeServices": ["web", "db"]
+}
